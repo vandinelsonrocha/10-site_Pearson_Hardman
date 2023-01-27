@@ -1,0 +1,194 @@
+/*------------Geral------------*/
+:root  { /*Declarar as variáveis do CSS - diminuem bastante o código*/
+    --main-color: #d92123; /*cor principal do site*/
+    --secondary-bg-color: #5c1011;
+    --primary-text-color: #FFF;
+    --secondary-text-color: #191919;
+    --secondary-color: #868686;
+    --tertiary-color: #eff3f4;
+}
+
+*  {
+    font-family: Lato;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*impede que os elementos passem da largura máxima do elemento pai*/
+}
+
+/*------------Estilos básicos------------*/
+a  {
+    text-decoration: none;
+}
+
+img  {
+    width: 100%;
+}
+
+input[type="submit"]  {
+    cursor: pointer;
+}
+
+i  { /*todos os ícones do site vão herdar a cor definida na variável*/
+    background-color: var(--main-color);
+    color: var(--primary-text-color);
+    font-size: 2.5rem; /*1rem = 16px*/
+    padding: 2rem;
+}
+
+/*------------Cabeçalho e banner------------*/
+#cabecalho  {
+    min-height: 90vh; /*o cabeçalho vai ocupar 90% da altura da tela*/
+    background-image: url("../imagens/main_banner4.png");
+    background-size: cover; /*faz com que o tamanho da imagem seja otimizada para a área que tenho a disposição dela-evitar a repetição da imagem*/
+    background-position: center;
+    color: var(--primary-text-color);
+    margin-bottom: 2rem;
+    position: relative;
+}
+#inner-header  {
+    display: flex;
+    justify-content: space-between; /*dá um espaço entre o h2 e o nav da div#inner-header*/
+    align-items: center; /*centraliza a nav com o h2*/
+}
+#marca  {
+    background-color: var(--main-color);
+    padding: 1rem;
+}
+#navbar  {
+    display: flex;
+    gap: 4rem; /*espaçamento interno entre os itens*/
+    text-transform: uppercase;
+    margin-right: 2rem;
+}
+nav#navbar a  {
+    color: var(--primary-text-color);
+    font-weight: bold;
+}
+.banner.active  {
+    opacity: 1;
+}
+.banner  {
+    max-width: 50%; /*largura máxima do banner-metade da largura da tela do navegador*/
+    padding: 4rem;
+    opacity: 0;
+    position: absolute;
+    transition: 0.6s;
+}
+.banner h2  {
+    font-size: 4rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 2; /*cor do h2 sobrepondo...*/
+}
+.banner p  {
+    font-size: 1.5rem;
+}
+.quadrado-vermelho  {
+    display: block;
+    width: 150px;
+    height: 150px;
+    background-color: var(--main-color);
+    position: absolute;
+    z-index: 1; /*...a cor do quadrado*/
+    left: 20px;
+    top: 40px;
+}
+.quadradinhos-vermelhos  {
+    display: flex;
+    gap: 2rem;
+    /*posicionando os quadradinhos no lugar certo -> no fim do header:*/
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+}
+.quadradinho.active  { /*se um quadradinho estiver ativo, ele fica vermelho*/
+    background-color: var(--main-color);
+}
+.quadradinho  {
+    width: 20px;
+    height: 20px;
+    background-color: var(--secundary-color);
+}
+
+/*------------Áreas de atuação------------*/
+.text-image-section  {
+    display: flex; /*pra poder deixar a imagem ao lado do texto*/
+    flex-wrap: wrap; /*se a largura exceder da largura da tela, uma div vai pra baixo da outra*/
+    gap: 2rem;
+}
+
+.text-container  {
+    flex: 2 1 0; /*com o dobro...*/
+    display: flex;
+    gap: 2rem;
+    flex-direction: column; /*cada elemento desta div um debaixo do outro, sem esta linha ficam um ao lado do outro*/
+    justify-content: center;
+    text-align: right;
+}
+
+.section-subtitle  {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--main-color);
+}
+.section-title  {
+    color: var(--secundary-text-color);
+    font-size: 2rem;
+}
+/*transformar um link num botão:*/
+.btn  {
+    padding: 1.2rem 1.8rem; /*botão em forma de retângulo*/
+    background-color: var(--main-color);
+    align-self: end; /*visto q está no flex, a cor vai ocupar a largura máxima do container, com esta propriedade, a cor vai ocupar exatamente o tamanho do botão*/
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary-text-color);
+}
+
+.image-container  {
+    flex: 1 1 300px; /*...do tamanho da imagem*/
+    position: relative;
+}
+.image-container i  {
+    position: absolute;
+}
+
+/*Áreas de atuação - outros serviços*/
+#other-services  {
+    display: flex; /*faz as outras 3 divs desta div peincipal ficarem um ao lado do outro*/
+    width: 100%;
+    gap: 2rem; /*espaçamento interno entre as 3 divs*/
+    padding: 2rem;
+}
+
+.service  {
+    position: relative;
+}
+.service i {
+    position: absolute;
+    top: 0; /*posicionando os ícones...*/
+    left: 0; /*...no canto superior esquerdo das imagens*/
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+.service-info  {
+    background-color: var(--tertiary-color);
+    padding: 2rem 1.4rem;
+    min-height: 250px;
+    margin-top: -3rem;
+    z-index: 2; /*texto sobrepondo a imagem*/
+    position: relative;
+}
+p.info  {
+    text-align: justify;
+}
+
+.service h4  {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+.service h4#construcao  {
+    font-size: 1.6rem;
+}

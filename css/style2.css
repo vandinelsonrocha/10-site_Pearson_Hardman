@@ -1,0 +1,117 @@
+/*------------Sobre nós------------*/
+#sobre  {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+#texto-sobre  {
+    background-image: url("../imagens/pattern.png");
+    background-size: cover;
+    background-position: center;
+    color: var(--primary-text-color);
+    flex: 1 1 0; /*esta div vai ter metade da largura*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 3rem;
+}
+
+#texto-sobre .section-subtitle, #texto-sobre .section-title  {
+    color: var(--primary-text-color);
+}
+#texto-sobre i  {
+    background-color: transparent;
+}
+
+.descricao-sobre  {
+    display: flex; /*ícone e texto um ao lado do outro*/
+    align-items: center;
+}
+.descricao-sobre h4  {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+#about-data  {
+    flex: 1 1 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+#about-data .data  {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin-top: -1px;
+    margin-right: -1px;
+}
+
+/*Colocando bordas de forma comum:*/
+/*
+div#about-data #div-sobre1  {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+div#about-data #div-sobre4  {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+*/
+/*Colocando bordas de forma profissional:*/
+#about-data .data:first-child  {/*pseudo-seletor para selecionar o 1º elemento - 1º filho do elemento*/
+    border-bottom: 1px solid var(--secondary-text-color);
+    border-right: 1px solid var(--secondary-text-color);
+}
+#about-data .data:last-child  {/*pseudo-seletor para selecionar o 4º/último elemento - 4º filho do elemento*/
+    border-top: 1px solid var(--secondary-text-color);
+    border-left: 1px solid var(--secondary-text-color);
+}
+
+#about-data .data i  {
+    background-color: transparent;
+    color: var(--main-color);
+    font-size: 4rem;
+    padding: 0;
+}
+.data .numero  {
+    font-size: 4rem;
+    font-weight: 900;
+}
+.data .texto  {
+    text-transform: uppercase;
+}
+
+/*------------Depoimentos de Clientes------------*/
+#testemunhas  {
+    display: flex;
+    align-items: center;
+}
+#testemunha-info  {
+    padding: 3rem;
+}
+
+.autor  {
+    justify-content: end; /*alinhar ao fim*/
+    align-items: center; /*todo o conteúdo dentro da div.autor no centro*/
+    gap: 1rem;
+}
+.autor .autor-nome  {
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.autor .autor-cargo  {
+    color: var(--secondary-text-color);
+}
+.autor img  {
+    width: 100px;
+    height: 100px;
+}
